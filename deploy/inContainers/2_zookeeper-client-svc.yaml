@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: zk-user-dev-01-client
+  namespace: user
+  labels:
+    app: zk
+spec:
+  type: NodePort
+  ports:
+  - port: 2181
+    name: client
+    nodePort: 2182
+  selector:
+    app: zk
